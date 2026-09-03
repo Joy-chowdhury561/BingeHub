@@ -24,7 +24,7 @@ const Hero = ({trending}) => {
     10765:"Sci-Fi & Fantasy",
     10759:"Action & Adventure"
   };
-  const genres = trending.genre_ids.map((id) => genreMap[id]).join(" / ");
+  const genres = trending.genre_ids?.map((id) => genreMap[id]).join(" / ");
   const rating = trending.vote_average.toString().split(".")[0];
   return (
     <div>

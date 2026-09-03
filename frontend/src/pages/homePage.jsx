@@ -15,14 +15,14 @@ const Home = () => {
     refetchOnWindowFocus: false,
     staleTime: Infinity,
   });
-  const {data:topRated}=useQuery({
+  const {data:topRated,}=useQuery({
     queryKey:["top rated"],
     queryFn:()=>getAllCategory("top_rated"),
     retry:false,
     refetchOnWindowFocus:false,
     staleTime:Infinity
   })
-  const {data:popular}=useQuery({
+  const {data:popular,}=useQuery({
     queryKey:["popular"],
     queryFn:()=>getAllCategory("popular"),
     retry:false,
@@ -30,7 +30,7 @@ const Home = () => {
     staleTime:Infinity
   })
 
-  const {data:Upcoming}=useQuery({
+  const {data:Upcoming,}=useQuery({
     queryKey:["Upcoming"],
     queryFn:()=>getAllCategory("upcoming", "on_the_air"),
     retry:false,
@@ -40,7 +40,7 @@ const Home = () => {
 
   
 
-  if (isPending) {
+  if (isPending ) {
     return (
       <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">
         Loading...

@@ -14,6 +14,9 @@ export const getTrendingAll = async () => {
 export const getMovieByCategory = async (category) => {
   try {
     const res = await fetch(`/api/movie/${category}`);
+    if (!res.ok) {
+      throw new Error("error in fetching movies by category");
+    }
     const data = await res.json();
     return data.content;
   } catch (error) {
@@ -25,6 +28,9 @@ export const getTvByCategory = async (category) => {
   try {
     const res = await fetch(`/api/tv/${category}`);
     const data = await res.json();
+    if (!res.ok) {
+      throw new Error("error in fetching tv shows by category");
+    }
     return data.content;
   } catch (error) {
     console.log("error in getting top rated", error.message || error);
@@ -53,6 +59,9 @@ export const getTrendingMovie = async () => {
   try {
     const res = await fetch("/api/movie/trendingMovie");
     const data = await res.json();
+    if (!res.ok) {
+      throw new Error("error in fetching trending movies");
+    }
     return data.content;
   } catch (error) {
     console.log("error in getting trending movie", error.message || error);
@@ -63,6 +72,9 @@ export const getTrendingTv=async()=>{
     try {
         const res=await fetch("/api/tv/trendingTv");
         const data=await res.json()
+        if (!res.ok) {
+      throw new Error("error in fetching trending tv show");
+    }
         return data.content
     } catch (error) {
         console.log("error in getting trending tv show",error.message || error);
@@ -73,6 +85,9 @@ export const getMovieDetail=async(id)=>{
   try {
     const res=await fetch(`/api/movie/detail/${id}`)
     const data=await res.json()
+    if (!res.ok) {
+      throw new Error("error in fetching  movies detail");
+    }
     return data.details;
   } catch (error) {
     console.log("error in fetching movie detail",error.message || error);
@@ -83,6 +98,9 @@ export const getMovieTrailer=async(movieId)=>{
   try {
     const res=await fetch(`/api/movie/trailer/${movieId}`)
     const data=await res.json();
+    if (!res.ok) {
+      throw new Error("error in fetching movies trailer");
+    }
     const trailerId=data.trailer[0].key;
     return trailerId;
   } catch (error) {
@@ -94,6 +112,9 @@ export const getTvTrailer=async(tvId)=>{
   try {
     const res=await fetch(`/api/tv/trailer/${tvId}`)
     const data=await res.json();
+    if (!res.ok) {
+      throw new Error("error in fetching tv shows trailer");
+    }
     const trailerId=data.trailer?.[0]?.key;
     return trailerId;
   } catch (error) {
@@ -105,6 +126,9 @@ export const getTvDetail=async(tvId)=>{
   try {
     const res=await fetch(`/api/tv/detail/${tvId}`)
     const data=await res.json()
+    if (!res.ok) {
+      throw new Error("error in fetching tv details");
+    }
     return data.details;
   } catch (error) {
     console.log("error in fetching tv details",error.message||error);
@@ -134,5 +158,16 @@ export const getSimilarTvs=async(tvId)=>{
     return data.content;
     } catch (error) {
       console.log("error in fetching similar tv shows" , error.message || error);
+      throw error
     }
+}
+export const Search=async(query)=>{
+  try {
+    const res=await fetch(`/api/search/all/${query}`);
+    const data=await res.json();
+    return data.searchResult;
+  } catch (error) {
+    console.log("error in fetching search results",error.message || error);
+    throw error
+  }
 }

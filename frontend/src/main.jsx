@@ -10,6 +10,7 @@ import TVDetails from "./pages/tvdetails";
 import NotFound from "./pages/notfound";
 import WatchMovie from "./pages/watchMovie";
 import WatchTv from "./pages/watchTv";
+import SearchPage from "./pages/searchPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 const queryClient = new QueryClient();
@@ -24,7 +25,8 @@ const router = createBrowserRouter([
       {path:"/details/movie/:movieId",element:<MovieDetails/>},
       {path:"/details/tv/:TvId",element:<TVDetails/>},
       {path:"/watch/movie/:movieId",element:<WatchMovie/>},
-      {path:"/watch/tv/:tvId",element:<WatchTv/>}
+      {path:"/watch/tv/:tvId",element:<WatchTv/>},
+      {path:"/search/results/:query",element:<SearchPage/>}
     ],
   },
   {path:"*",element:<NotFound/>}
