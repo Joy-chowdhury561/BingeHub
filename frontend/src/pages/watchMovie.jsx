@@ -29,7 +29,7 @@ const WatchMovie = () => {
         <h1 className="text-white flex justify-center items-center w-[90%] overflow-clip text-ellipsis text-nowrap font-medium text-[clamp(1.5rem,2vw,10rem)]">
           {movieDetail.name || movieDetail.title || movieDetail.original_title }
         </h1>
-        <iframe className="w-[clamp(22rem,70vw,200rem)] h-[clamp(15rem,40vw,200rem)]" allowFullScreen src={`https://vidsrc.sbs/embed/movie/${movieId}`} frameborder="0"></iframe>
+        <iframe className="w-[clamp(25rem,70vw,200rem)] h-[clamp(21rem,40vw,200rem)]" allowFullScreen src={`https://vidsrc.sbs/embed/movie/${movieId}`} frameborder="0"></iframe>
       </div>
     </div>
 

@@ -31,7 +31,7 @@ const WatchTv = () => {
               tvDetail.original_title}
           </h1>
           <iframe
-            className="w-[clamp(22rem,70vw,200rem)] h-[clamp(15rem,40vw,200rem)]"
+            className="w-[clamp(22rem,70vw,200rem)] h-[clamp(21rem,40vw,200rem)]"
             allowFullScreen
             src={`https://vidsrc.sbs/embed/tv/${tvId}/1/1`}
             frameborder="0"
