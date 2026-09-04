@@ -20,6 +20,9 @@ app.use("/api/auth",authRoutes)
 app.use("/api/movie",movieRoutes)
 app.use("/api/tv",TVroutes)
 app.use("/api/search",searchRoutes)
+app.get("/health",(req,res)=>{
+    res.status(200).json("ok")
+})
 if(process.env.NODE_ENV==="production"){
     app.use(express.static(path.join(__dirname,"frontend","dist")))
     app.get("/{*any}",(req,res)=>{
