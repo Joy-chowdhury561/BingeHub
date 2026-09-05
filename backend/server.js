@@ -12,7 +12,7 @@ dotenv.config()
 const port=process.env.PORT || 5000
 const app=express()
 app.use(cors({
-    origin:"http://localhost:3000",
+    origin:"https://binge-hub-ten.vercel.app",
     credentials:true,
 }))
 app.set("trust proxy", 1);
