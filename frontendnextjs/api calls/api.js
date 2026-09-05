@@ -45,7 +45,7 @@ export const getAllCategory = async (
 ) => {
   try {
     const Movieres = await fetch(`${process.env.BACKEND_URL}/api/movie/${movieCategory}`);
-    const Tvres = await fetch(`http://localhost:8000/api/tv/${tvCategory}`);
+    const Tvres = await fetch(`${process.env.BACKEND_URL}/api/tv/${tvCategory}`);
     const movieData = await Movieres.json();
     const tvData = await Tvres.json();
     const trendingMovies = movieData.content;
