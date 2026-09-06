@@ -2,7 +2,7 @@ import TVS from "./tvsPage";
 export async function generateMetadata() {
   return {
     title: "TV Shows | BingeHub",
-    description: "Browse huge collection tv shows and anime's on BingeHub for free",
+    description: "Browse huge collection of tv shows and anime's on BingeHub for free",
   };
 }
 const TvsPage = () => {
