@@ -27,16 +27,16 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-black/30 flex z-50 justify-evenly items-center backdrop-blur-md fixed sm:sticky top-0 right-0 left-0 w-full ">
+      <div className="sm:bg-black/30 gap-1 flex z-50 sm:justify-evenly sm:gap-0 justify-center items-center sm:backdrop-blur-md fixed sm:sticky top-0 right-0 left-0 w-full ">
         <Link href="/">
           <div className="flex cursor-pointer items-center">
-            <Image priority="true" width={50} height={50} className="h-[clamp(4rem,5vw,50rem)] w-[clamp(4rem,5vw,50rem)]" src="/logo.png" alt="logo" />
-            <h1 className="hidden md:block text-4xl text-green-400 font-bold">
+            <Image priority="true" width={50} height={50} className="h-[clamp(3rem,5vw,50rem)] w-[clamp(3rem,5vw,50rem)]" src="/logo.png" alt="logo" />
+            <h1 className="hidden md:block text-3xl text-green-400 font-bold">
               BingeHub
             </h1>
           </div>
         </Link>
-        <div className="flex gap-[clamp(13px,1vw,3rem)]">
+        <div className="hidden sm:flex gap-[clamp(13px,1vw,3rem)]">
           <Link href="/">
             <p
               className={`font-medium delay-100 hover:text-green-500 cursor-pointer ${page === "home" ? "text-green-500" : "text-amber-50"} text-amber-50 text-[clamp(0.8rem,1vw,3rem)] `}
@@ -69,6 +69,7 @@ const Navbar = () => {
             )}
           </Link>
         </div>
+        <h1 className="text-white font-bold text-xl sm:hidden">BingeHub</h1>
         <PcSearchBar/>
       </div>
       <MbSearchBar />

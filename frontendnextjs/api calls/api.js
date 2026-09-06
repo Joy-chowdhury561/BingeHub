@@ -1,5 +1,5 @@
 "use server"
-
+const devBackendUrl="http://localhost:8000"
 export const getTrendingAll = async () => {
   try {
     const res = await fetch(`${process.env.BACKEND_URL}/api/movie/trendingAll`);
