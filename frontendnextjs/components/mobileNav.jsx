@@ -30,10 +30,7 @@ const MobileNav = () => {
         <Link href="/">
           <div className="text-gray-500 text-[clamp(0.8rem,1vw,2rem)] flex flex-col items-center">
             <IoMdHome
-              className={`${page === "home" ? "text-green-500" : "text-gray-500"} text-3xl`}
-              style={{
-                filter: "drop-shadow(0 0 30px rgba(34, 197, 94, 0.7))",
-              }}
+              className={`${page === "home" ? "text-green-500 drop-shadow-[0_0_12px_#22c55e]" : "text-gray-500"} text-3xl`}
             />
             Home
           </div>
@@ -41,10 +38,7 @@ const MobileNav = () => {
         <Link href="/movies">
           <div className="text-gray-500 text-[clamp(0.8rem,1vw,2rem)] flex flex-col items-center">
             <BiSolidMoviePlay
-              className={`${page === "movies" ? "text-green-500" : "text-gray-500"} text-3xl`}
-              style={{
-                filter: "drop-shadow(0 0 30px rgba(34, 197, 94, 0.7))",
-              }}
+              className={`${page === "movies" ? "text-green-500 drop-shadow-[0_0_12px_#22c55e]" : "text-gray-500"} text-3xl`}
             />
             Movies
           </div>
@@ -52,10 +46,7 @@ const MobileNav = () => {
         <Link href="/tvs">
           <div className="text-gray-700 text-[clamp(0.8rem,1vw,2rem)] flex flex-col items-center">
             <PiFilmReelFill
-              className={`${page === "tv shows" ? "text-green-500" : "text-gray-500"} text-3xl`}
-              style={{
-                filter: "drop-shadow(0 0 30px rgba(34, 197, 94, 0.7))",
-              }}
+              className={`${page === "tv shows" ? "text-green-500 drop-shadow-[0_0_12px_#22c55e]" : "text-gray-500"} text-3xl`}
             />
             Tv shows
           </div>
