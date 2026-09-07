@@ -17,7 +17,7 @@ const allowedOrigins = [
 ];
 app.use(
   cors({
-    origin:"http://localhost:3000",
+    origin:allowedOrigins,
     credentials: true,
   }),
 );
