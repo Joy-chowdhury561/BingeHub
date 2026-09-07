@@ -1,5 +1,5 @@
 "use client"
-
+import Footer from "@/components/footer.jsx";
 import { useEffect, useState } from "react";
 import { BiSolidMoviePlay } from "react-icons/bi";
 import { IoStar } from "react-icons/io5";
@@ -43,11 +43,11 @@ const MovieDetails = () => {
   }, [overview]);
 
   if (isPending) {
-    return <div className="text-white">Loading...</div>;
+    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Loading...</div>;
   }
 
   if (isError || !movieDetail) {
-    return <div className="text-white">Unable to load movie details.</div>;
+    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Unable to load movie details.</div>;
   }
  
 
@@ -102,6 +102,7 @@ const MovieDetails = () => {
           <p className="text-white mt-5">No trailer available.</p>
         )}
       </div>
+      <Footer isPending={isPending}/>
     </>
   );
 };

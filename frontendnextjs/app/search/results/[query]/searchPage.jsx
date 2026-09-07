@@ -1,5 +1,5 @@
 "use client"
-
+import Footer from "@/components/footer.jsx"
 import { useParams } from "next/navigation"
 import SearchResult from "../../../../components/searchResult.jsx"
 import {useQuery} from "@tanstack/react-query"
@@ -7,13 +7,17 @@ import {Search} from "../../../../api calls/api.js"
 const SearchPage = () => {
    const {query}=useParams()
   const displayQuery = decodeURIComponent(query)
-   const {data:searchResult}=useQuery({
+   const {data:searchResult,isPending}=useQuery({
     queryKey:["search result",query],
     queryFn:()=>Search(query),
     retry:false,
     fetchOnWindoFocus:false,
     staleTime:Infinity
    })
+
+   if(isPending){
+    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Loading...</div>
+   }
   return (
     <>
     <div className="w-full flex justify-center items-center  flex-col ">
@@ -26,6 +30,7 @@ const SearchPage = () => {
       </div>
 
     </div>
+    <Footer isPending={isPending}/>
     </>
   )
 }

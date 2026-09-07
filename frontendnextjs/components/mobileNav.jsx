@@ -26,7 +26,7 @@ const MobileNav = () => {
   }, [currentLocation]);
   return (
     <>
-      <div className="w-full p-2.5 flex items-center justify-evenly bg-gray-950 rounded-t-2xl  sticky sm:hidden bottom-0 right-0 left-0">
+      <div className="w-full p-2.5 flex items-center justify-evenly bg-gray-950 rounded-t-2xl  fixed  sm:hidden bottom-0 right-0 left-0">
         <Link href="/">
           <div className={`text-gray-500 ${page==="home"?"text-green-500":"text-gray-500"} text-[clamp(0.8rem,1vw,2rem)] flex flex-col items-center`}>
             <IoMdHome

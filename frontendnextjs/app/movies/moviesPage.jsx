@@ -1,5 +1,5 @@
 "use client"
-
+import Footer from "@/components/footer.jsx";
 import Hero from "../../components/hero.jsx";
 import { useQuery } from "@tanstack/react-query";
 import { getTrendingMovie, getMovieByCategory } from "../../api calls/api.js";
@@ -37,8 +37,7 @@ const Movies = () => {
   });
   if (isPending) {
     return (
-      <div className="text-white w-full h-full flex justify-center items-center">
-        {" "}
+      <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">
         loading...
       </div>
     );
@@ -50,6 +49,7 @@ const Movies = () => {
       <Category category={topRatedMovie} categoryName={"Top Rated"} mediaType="movie"/>
       <Category category={popularMovie} categoryName={"Popular"} mediaType="movie"/>
       <Category category={UpcomingMovie} categoryName={"Upcoming"} mediaType="movie"/>
+      <Footer isPending={isPending}/>
     </>
   );
 };

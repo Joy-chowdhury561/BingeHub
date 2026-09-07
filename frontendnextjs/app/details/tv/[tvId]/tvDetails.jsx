@@ -1,5 +1,5 @@
 "use client"
-
+import Footer from "@/components/footer.jsx";
 import { useEffect, useState } from "react";
 import { PiFilmReelFill } from "react-icons/pi";
 import { IoStar } from "react-icons/io5";
@@ -44,11 +44,11 @@ const TVDetails = () => {
   }, [overview]);
 
   if (isPending) {
-    return <div className="text-white">Loading...</div>;
+    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Loading...</div>;
   }
 
   if (isError || !tvDetail) {
-    return <div className="text-white">Unable to load TV details.</div>;
+    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Unable to load TV details.</div>;
   }
 
   const tvTitle = tvDetail.name || tvDetail.title || "Unknown title";
@@ -102,6 +102,7 @@ const TVDetails = () => {
           <p className="text-white mt-5">No trailer available.</p>
         )}
       </div>
+      <Footer isPending={isPending}/>
     </>
   );
 };

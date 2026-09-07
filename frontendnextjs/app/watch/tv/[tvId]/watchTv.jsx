@@ -1,5 +1,5 @@
 "use client"
-
+import Footer from "@/components/footer.jsx";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import Category from "../../../../components/category.jsx";
@@ -21,7 +21,7 @@ const WatchTv = () => {
     staleTime: Infinity,
   });
   if (isPending) {
-    return <div>Loading...</div>;
+    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Loading...</div>;
   }
   return (
     <>
@@ -44,6 +44,7 @@ const WatchTv = () => {
       {!fetchingSimilars && (
         <Category category={similarTvs} categoryName={"You may also like"} />
       )}
+      <Footer isPending={isPending}/>
     </>
   );
 };

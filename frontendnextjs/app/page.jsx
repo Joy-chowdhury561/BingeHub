@@ -2,7 +2,7 @@
 
 import { getTrendingAll,getAllCategory } from "../api calls/api.js";
 import { useQuery } from "@tanstack/react-query";
-
+import Footer from "@/components/footer.jsx";
 import Hero from "../components/hero.jsx"
 import Category from "../components/category.jsx";
 const Home = () => {
@@ -67,6 +67,7 @@ const Home = () => {
       <Category category={topRated} categoryName={"Top Rated"}/>
       <Category category={popular} categoryName={"Popular"}/>
       <Category category={Upcoming} categoryName={"Upcoming"}/>
+      <Footer isPending={isPending}/>
     </>
   );
 };

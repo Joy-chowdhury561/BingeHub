@@ -3,6 +3,7 @@ import Category from "../../components/category.jsx";
 import { useQuery } from "@tanstack/react-query";
 import Hero from "../../components/hero.jsx";
 import { getTrendingTv,getTvByCategory } from "../../api calls/api.js";
+import Footer from "@/components/footer.jsx"
 const TVS = () => {
   const { data: trendingTv, isPending } = useQuery({
     queryKey: ["trending tv show"],
@@ -35,8 +36,7 @@ const TVS = () => {
   });
   if (isPending) {
     return (
-      <div className="text-white w-full h-full flex justify-center items-center">
-        {" "}
+      <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">
         loading...
       </div>
     );
@@ -47,6 +47,7 @@ const TVS = () => {
       <Category category={topRatedTv} categoryName={"Top Rated"}  />
       <Category category={popularTv} categoryName={"Popular"}/>
       <Category category={UpcomingTv} categoryName={"Upcoming"} />
+      <Footer isPending={isPending}/>
     </>
   );
 };
