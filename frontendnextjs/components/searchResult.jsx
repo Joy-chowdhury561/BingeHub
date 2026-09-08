@@ -14,7 +14,7 @@ const SearchResult = ({result}) => {
   return (
     <>
     <div onClick={goToDetails} className="h-110 pb-2 w-70 hover:border hover:border-green-400 hover:bg-[#333333] cursor-pointer hover:scale-105 duration-75  flex flex-col shrink-0 bg-[#1e1e1e] rounded-xl">
-      <Image width={400} height={400} className="h-[85%] rounded-tr-xl rounded-tl-xl" src={`https://image.tmdb.org/t/p/original/${result.poster_path}`} alt="no poster available" />
+      <Image width={350} height={350} className="h-[85%] rounded-tr-xl rounded-tl-xl" src={`https://image.tmdb.org/t/p/original/${result.poster_path}`} alt="no poster available" />
         <p className="text-white w-[90%] overflow-clip text-nowrap text-ellipsis ml-2 font-medium text-[clamp(0.8rem,0.8vw,2rem)]" >{result.name || result.title || result.original_title}</p>
         <p className="text-gray-300 ml-2">{result.media_type}</p>
         <div className="flex items-center justify-between pr-2  ">

@@ -55,7 +55,7 @@ const MovieDetails = () => {
   return (
     <>
       <div className="w-full flex mt-26 sm:mt-0 gap-[2vw]">
-        <Image width={400} height={400}
+        <Image width={350} height={350}
           className="h-[clamp(15rem,20vw,100rem)] w-[clamp(12rem,15vw,100rem)] ml-[2vw] "
           src={`https://image.tmdb.org/t/p/original${movieDetail.poster_path}`}
           alt={movieDetail.title || movieDetail.origin_title || movieDetail.name}
