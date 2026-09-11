@@ -27,7 +27,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(async(req,res,next)=>{
     const origin=req.headers.origin;
     if (
-    origin &&
     origin !== "https://binge-hub-ten.vercel.app"
   ) {
     return res.status(403).json({
