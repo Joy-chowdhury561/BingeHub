@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import Hero from "../../components/hero.jsx";
 import { getTrendingTv,getTvByCategory } from "../../api calls/api.js";
 import Footer from "@/components/footer.jsx"
+import Loader from "@/components/loader.jsx"
 const TVS = () => {
   const { data: trendingTv, isPending } = useQuery({
     queryKey: ["trending tv show"],
@@ -36,10 +37,8 @@ const TVS = () => {
   });
   if (isPending) {
     return (
-      <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">
-        loading...
-      </div>
-    );
+      <Loader/>
+    )
   }
   return (
     <>

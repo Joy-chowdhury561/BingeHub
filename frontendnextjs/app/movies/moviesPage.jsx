@@ -4,7 +4,7 @@ import Hero from "../../components/hero.jsx";
 import { useQuery } from "@tanstack/react-query";
 import { getTrendingMovie, getMovieByCategory } from "../../api calls/api.js";
 import Category from "../../components/category.jsx";
-
+import Loader from "@/components/loader.jsx"
 const Movies = () => {
   const { data: trendingMovie, isPending } = useQuery({
     queryKey: ["trending movie"],
@@ -37,9 +37,7 @@ const Movies = () => {
   });
   if (isPending) {
     return (
-      <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">
-        loading...
-      </div>
+      <Loader/>
     );
   }
   return (

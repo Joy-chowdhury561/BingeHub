@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import Image from "next/image.js";
+import Loader from "@/components/loader.jsx";
 const MovieDetails = () => {
   const { movieId } = useParams();
   const {
@@ -43,7 +44,7 @@ const MovieDetails = () => {
   }, [overview]);
 
   if (isPending) {
-    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Loading...</div>;
+    return <Loader/>
   }
 
   if (isError || !movieDetail) {

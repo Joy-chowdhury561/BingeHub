@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import Category from "../../../../components/category.jsx";
 import { getMovieDetail,getSimilarMovies } from "../../../../api calls/api.js";
+import Loader from "@/components/loader.jsx"
 const WatchMovie = () => {
   const { movieId } = useParams();
   const { data: movieDetail,isPending } = useQuery({
@@ -21,7 +22,7 @@ const WatchMovie = () => {
     staleTime: Infinity,
   })
   if(isPending){
-    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Loading...</div>
+    return <Loader/>
   }
   return (
     <>

@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import Category from "../../../../components/category.jsx";
 import { getTvDetail, getSimilarTvs } from "../../../../api calls/api.js";
+import Loader from "@/components/loader.jsx"
 const WatchTv = () => {
   const { tvId } = useParams();
   const { data: tvDetail, isPending } = useQuery({
@@ -21,7 +22,7 @@ const WatchTv = () => {
     staleTime: Infinity,
   });
   if (isPending) {
-    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Loading...</div>;
+    return <Loader/>
   }
   return (
     <>

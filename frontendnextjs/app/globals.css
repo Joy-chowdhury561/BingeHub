@@ -21,3 +21,14 @@ body,html{
 ::-webkit-scrollbar-thumb:hover {
   background: #333;
 }
+.spinner{
+    animation: spin 1s ease-in-out 0.1s infinite;
+}
+@keyframes spin {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+      transform: rotate(100%);
+  }
+}

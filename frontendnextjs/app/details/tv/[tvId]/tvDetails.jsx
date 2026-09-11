@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import  Link  from "next/link";
 import Image from "next/image"
+import Loader from "@/components/loader.jsx"
 const TVDetails = () => {
   const {tvId} = useParams();
   const {
@@ -44,7 +45,7 @@ const TVDetails = () => {
   }, [overview]);
 
   if (isPending) {
-    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Loading...</div>;
+    return <Loader/>
   }
 
   if (isError || !tvDetail) {

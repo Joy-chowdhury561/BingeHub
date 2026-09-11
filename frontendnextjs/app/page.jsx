@@ -1,5 +1,5 @@
 "use client"
-
+import Loader from "@/components/loader.jsx";
 import { getTrendingAll,getAllCategory } from "../api calls/api.js";
 import { useQuery } from "@tanstack/react-query";
 import Footer from "@/components/footer.jsx";
@@ -44,9 +44,7 @@ const Home = () => {
 
   if (isPending ) {
     return (
-      <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">
-        Loading...
-      </div>
+      <Loader/>
     );
   }
 

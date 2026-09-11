@@ -2,7 +2,7 @@
 const devBackendUrl="http://localhost:8000"
 export const getTrendingAll = async () => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/movie/trendingAll`,{
+    const res = await fetch(`${devBackendUrl}/api/movie/trendingAll`,{
       next:{
         revalidate:30
       }
@@ -19,7 +19,7 @@ export const getTrendingAll = async () => {
 };
 export const getMovieByCategory = async (category) => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/movie/${category}`,{
+    const res = await fetch(`${devBackendUrl}/api/movie/${category}`,{
       next:{
         revalidate:30
       }
@@ -36,7 +36,7 @@ export const getMovieByCategory = async (category) => {
 };
 export const getTvByCategory = async (category) => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/tv/${category}`,{
+    const res = await fetch(`${devBackendUrl}/api/tv/${category}`,{
       next:{
         revalidate:30
       }
@@ -56,12 +56,12 @@ export const getAllCategory = async (
   tvCategory = movieCategory,
 ) => {
   try {
-    const Movieres = await fetch(`${process.env.BACKEND_URL}/api/movie/${movieCategory}`,{
+    const Movieres = await fetch(`${devBackendUrl}/api/movie/${movieCategory}`,{
       next:{
         revalidate:30
       }
     });
-    const Tvres = await fetch(`${process.env.BACKEND_URL}/api/tv/${tvCategory}`,{
+    const Tvres = await fetch(`${devBackendUrl}/api/tv/${tvCategory}`,{
       next:{
         revalidate:30
       }
@@ -79,7 +79,7 @@ export const getAllCategory = async (
 };
 export const getTrendingMovie = async () => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/movie/trendingMovie`,{
+    const res = await fetch(`${devBackendUrl}/api/movie/trendingMovie`,{
       next:{
         revalidate:30
       }
@@ -96,7 +96,7 @@ export const getTrendingMovie = async () => {
 };
 export const getTrendingTv=async()=>{
     try {
-        const res=await fetch(`${process.env.BACKEND_URL}/api/tv/trendingTv`,{
+        const res=await fetch(`${devBackendUrl}/api/tv/trendingTv`,{
           next:{
             revalidate:30
           }
@@ -113,7 +113,7 @@ export const getTrendingTv=async()=>{
 }
 export const getMovieDetail=async(id)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/movie/detail/${id}`,{
+    const res=await fetch(`${devBackendUrl}/api/movie/detail/${id}`,{
       next:{
         revalidate:3600
       }
@@ -130,7 +130,7 @@ export const getMovieDetail=async(id)=>{
 }
 export const getMovieTrailer=async(movieId)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/movie/trailer/${movieId}`,{
+    const res=await fetch(`${devBackendUrl}/api/movie/trailer/${movieId}`,{
       next:{
         revalidate:3600
       }
@@ -148,7 +148,7 @@ export const getMovieTrailer=async(movieId)=>{
 }
 export const getTvTrailer=async(tvId)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/tv/trailer/${tvId}`,{
+    const res=await fetch(`${devBackendUrl}/api/tv/trailer/${tvId}`,{
       next:{
         revalidate:3600
       }
@@ -166,7 +166,7 @@ export const getTvTrailer=async(tvId)=>{
 }
 export const getTvDetail=async(tvId)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/tv/detail/${tvId}`,{
+    const res=await fetch(`${devBackendUrl}/api/tv/detail/${tvId}`,{
       next:{
         revalidate:3600
       }
@@ -183,7 +183,7 @@ export const getTvDetail=async(tvId)=>{
 }
 export const getSimilarMovies=async(movieId)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/movie/similar/${movieId}`,{
+    const res=await fetch(`${devBackendUrl}/api/movie/similar/${movieId}`,{
       next:{
         revalidate:600
       }
@@ -200,7 +200,7 @@ export const getSimilarMovies=async(movieId)=>{
 }
 export const getSimilarTvs=async(tvId)=>{
     try {
-      const res=await fetch(`${process.env.BACKEND_URL}/api/tv/similar/${tvId}`,{
+      const res=await fetch(`${devBackendUrl}/api/tv/similar/${tvId}`,{
       next:{
         revalidate:3600
       }
@@ -217,7 +217,7 @@ export const getSimilarTvs=async(tvId)=>{
 }
 export const Search=async(query)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/search/all/${query}`,{
+    const res=await fetch(`${devBackendUrl}/api/search/all/${query}`,{
       next:{
         revalidate:60
       }

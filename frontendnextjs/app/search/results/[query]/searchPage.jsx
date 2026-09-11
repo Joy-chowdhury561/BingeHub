@@ -4,6 +4,7 @@ import { useParams } from "next/navigation"
 import SearchResult from "../../../../components/searchResult.jsx"
 import {useQuery} from "@tanstack/react-query"
 import {Search} from "../../../../api calls/api.js"
+import Loader from "@/components/loader.jsx"
 const SearchPage = () => {
    const {query}=useParams()
   const displayQuery = decodeURIComponent(query)
@@ -16,7 +17,7 @@ const SearchPage = () => {
    })
 
    if(isPending){
-    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Loading...</div>
+    return <Loader/>
    }
   return (
     <>
