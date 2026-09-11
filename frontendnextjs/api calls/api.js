@@ -2,7 +2,9 @@
 const devBackendUrl="http://localhost:8000"
 export const getTrendingAll = async () => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/movie/trendingAll`);
+    const res = await fetch(`${process.env.BACKEND_URL}/api/movie/trendingAll`,{
+      cache:"force-cache"
+    });
     const data = await res.json();
     if (!res.ok) {
       throw new Error("error in getting trending content");
@@ -15,7 +17,9 @@ export const getTrendingAll = async () => {
 };
 export const getMovieByCategory = async (category) => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/movie/${category}`);
+    const res = await fetch(`${process.env.BACKEND_URL}/api/movie/${category}`,{
+      cache:"force-cache"
+    });
     if (!res.ok) {
       throw new Error("error in fetching movies by category");
     }
@@ -28,7 +32,9 @@ export const getMovieByCategory = async (category) => {
 };
 export const getTvByCategory = async (category) => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/tv/${category}`);
+    const res = await fetch(`${process.env.BACKEND_URL}/api/tv/${category}`,{
+      cache:"force-cache"
+    });
     const data = await res.json();
     if (!res.ok) {
       throw new Error("error in fetching tv shows by category");
@@ -44,8 +50,12 @@ export const getAllCategory = async (
   tvCategory = movieCategory,
 ) => {
   try {
-    const Movieres = await fetch(`${process.env.BACKEND_URL}/api/movie/${movieCategory}`);
-    const Tvres = await fetch(`${process.env.BACKEND_URL}/api/tv/${tvCategory}`);
+    const Movieres = await fetch(`${process.env.BACKEND_URL}/api/movie/${movieCategory}`,{
+      cache:"force-cache"
+    });
+    const Tvres = await fetch(`${process.env.BACKEND_URL}/api/tv/${tvCategory}`,{
+      cache:"force-cache"
+    });
     const movieData = await Movieres.json();
     const tvData = await Tvres.json();
     const trendingMovies = movieData.content;
@@ -59,7 +69,9 @@ export const getAllCategory = async (
 };
 export const getTrendingMovie = async () => {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/movie/trendingMovie`);
+    const res = await fetch(`${process.env.BACKEND_URL}/api/movie/trendingMovie`,{
+      cache:"force-cache"
+    });
     const data = await res.json();
     if (!res.ok) {
       throw new Error("error in fetching trending movies");
@@ -72,7 +84,9 @@ export const getTrendingMovie = async () => {
 };
 export const getTrendingTv=async()=>{
     try {
-        const res=await fetch(`${process.env.BACKEND_URL}/api/tv/trendingTv`);
+        const res=await fetch(`${process.env.BACKEND_URL}/api/tv/trendingTv`,{
+      cache:"force-cache"
+    });
         const data=await res.json()
         if (!res.ok) {
       throw new Error("error in fetching trending tv show");
@@ -85,7 +99,9 @@ export const getTrendingTv=async()=>{
 }
 export const getMovieDetail=async(id)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/movie/detail/${id}`)
+    const res=await fetch(`${process.env.BACKEND_URL}/api/movie/detail/${id}`,{
+      cache:"force-cache"
+    })
     const data=await res.json()
     if (!res.ok) {
       throw new Error("error in fetching  movies detail");
@@ -98,7 +114,9 @@ export const getMovieDetail=async(id)=>{
 }
 export const getMovieTrailer=async(movieId)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/movie/trailer/${movieId}`)
+    const res=await fetch(`${process.env.BACKEND_URL}/api/movie/trailer/${movieId}`,{
+      cache:"force-cache"
+    })
     const data=await res.json();
     if (!res.ok) {
       throw new Error("error in fetching movies trailer");
@@ -112,7 +130,9 @@ export const getMovieTrailer=async(movieId)=>{
 }
 export const getTvTrailer=async(tvId)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/tv/trailer/${tvId}`)
+    const res=await fetch(`${process.env.BACKEND_URL}/api/tv/trailer/${tvId}`,{
+      cache:"force-cache"
+    })
     const data=await res.json();
     if (!res.ok) {
       throw new Error("error in fetching tv shows trailer");
@@ -126,7 +146,9 @@ export const getTvTrailer=async(tvId)=>{
 }
 export const getTvDetail=async(tvId)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/tv/detail/${tvId}`)
+    const res=await fetch(`${process.env.BACKEND_URL}/api/tv/detail/${tvId}`,{
+      cache:"force-cache"
+    })
     const data=await res.json()
     if (!res.ok) {
       throw new Error("error in fetching tv details");
@@ -139,7 +161,9 @@ export const getTvDetail=async(tvId)=>{
 }
 export const getSimilarMovies=async(movieId)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/movie/similar/${movieId}`);
+    const res=await fetch(`${process.env.BACKEND_URL}/api/movie/similar/${movieId}`,{
+      cache:"force-cache"
+    });
     const data=await res.json()
     if (!res.ok) {
       throw new Error("error in fetching similar movies");
@@ -152,7 +176,9 @@ export const getSimilarMovies=async(movieId)=>{
 }
 export const getSimilarTvs=async(tvId)=>{
     try {
-      const res=await fetch(`${process.env.BACKEND_URL}/api/tv/similar/${tvId}`);
+      const res=await fetch(`${process.env.BACKEND_URL}/api/tv/similar/${tvId}`,{
+      cache:"force-cache"
+    });
     const data=await res.json()
     if (!res.ok) {
       throw new Error("error in fetching similar movies");
@@ -165,7 +191,9 @@ export const getSimilarTvs=async(tvId)=>{
 }
 export const Search=async(query)=>{
   try {
-    const res=await fetch(`${process.env.BACKEND_URL}/api/search/all/${query}`);
+    const res=await fetch(`${process.env.BACKEND_URL}/api/search/all/${query}`,{
+      cache:"force-cache"
+    });
     const data=await res.json();
     return data.searchResult;
   } catch (error) {
