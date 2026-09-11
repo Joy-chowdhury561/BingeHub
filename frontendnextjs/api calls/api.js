@@ -3,7 +3,9 @@ const devBackendUrl="http://localhost:8000"
 export const getTrendingAll = async () => {
   try {
     const res = await fetch(`${process.env.BACKEND_URL}/api/movie/trendingAll`,{
-      cache:"force-cache"
+      next:{
+        revalidate:30
+      }
     });
     const data = await res.json();
     if (!res.ok) {
@@ -18,7 +20,9 @@ export const getTrendingAll = async () => {
 export const getMovieByCategory = async (category) => {
   try {
     const res = await fetch(`${process.env.BACKEND_URL}/api/movie/${category}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:30
+      }
     });
     if (!res.ok) {
       throw new Error("error in fetching movies by category");
@@ -33,7 +37,9 @@ export const getMovieByCategory = async (category) => {
 export const getTvByCategory = async (category) => {
   try {
     const res = await fetch(`${process.env.BACKEND_URL}/api/tv/${category}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:30
+      }
     });
     const data = await res.json();
     if (!res.ok) {
@@ -51,10 +57,14 @@ export const getAllCategory = async (
 ) => {
   try {
     const Movieres = await fetch(`${process.env.BACKEND_URL}/api/movie/${movieCategory}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:30
+      }
     });
     const Tvres = await fetch(`${process.env.BACKEND_URL}/api/tv/${tvCategory}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:30
+      }
     });
     const movieData = await Movieres.json();
     const tvData = await Tvres.json();
@@ -70,7 +80,9 @@ export const getAllCategory = async (
 export const getTrendingMovie = async () => {
   try {
     const res = await fetch(`${process.env.BACKEND_URL}/api/movie/trendingMovie`,{
-      cache:"force-cache"
+      next:{
+        revalidate:30
+      }
     });
     const data = await res.json();
     if (!res.ok) {
@@ -85,8 +97,10 @@ export const getTrendingMovie = async () => {
 export const getTrendingTv=async()=>{
     try {
         const res=await fetch(`${process.env.BACKEND_URL}/api/tv/trendingTv`,{
-      cache:"force-cache"
-    });
+          next:{
+            revalidate:30
+          }
+        });
         const data=await res.json()
         if (!res.ok) {
       throw new Error("error in fetching trending tv show");
@@ -100,7 +114,9 @@ export const getTrendingTv=async()=>{
 export const getMovieDetail=async(id)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/movie/detail/${id}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:3600
+      }
     })
     const data=await res.json()
     if (!res.ok) {
@@ -115,7 +131,9 @@ export const getMovieDetail=async(id)=>{
 export const getMovieTrailer=async(movieId)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/movie/trailer/${movieId}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:3600
+      }
     })
     const data=await res.json();
     if (!res.ok) {
@@ -131,7 +149,9 @@ export const getMovieTrailer=async(movieId)=>{
 export const getTvTrailer=async(tvId)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/tv/trailer/${tvId}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:3600
+      }
     })
     const data=await res.json();
     if (!res.ok) {
@@ -147,7 +167,9 @@ export const getTvTrailer=async(tvId)=>{
 export const getTvDetail=async(tvId)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/tv/detail/${tvId}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:3600
+      }
     })
     const data=await res.json()
     if (!res.ok) {
@@ -162,7 +184,9 @@ export const getTvDetail=async(tvId)=>{
 export const getSimilarMovies=async(movieId)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/movie/similar/${movieId}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:600
+      }
     });
     const data=await res.json()
     if (!res.ok) {
@@ -177,7 +201,9 @@ export const getSimilarMovies=async(movieId)=>{
 export const getSimilarTvs=async(tvId)=>{
     try {
       const res=await fetch(`${process.env.BACKEND_URL}/api/tv/similar/${tvId}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:3600
+      }
     });
     const data=await res.json()
     if (!res.ok) {
@@ -192,7 +218,9 @@ export const getSimilarTvs=async(tvId)=>{
 export const Search=async(query)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/search/all/${query}`,{
-      cache:"force-cache"
+      next:{
+        revalidate:60
+      }
     });
     const data=await res.json();
     return data.searchResult;
