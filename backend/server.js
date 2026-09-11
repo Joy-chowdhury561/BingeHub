@@ -24,6 +24,19 @@ app.set("trust proxy", 1);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+app.use(async(req,res,next)=>{
+    const origin=req.headers.origin;
+    if (
+    origin &&
+    origin !== "https://binge-hub-ten.vercel.app"
+  ) {
+    return res.status(403).json({
+      message: "Forbidden"
+    });
+  }
+
+  next();
+})
 app.use("/api/auth", authRoutes);
 app.use("/api/movie", movieRoutes);
 app.use("/api/tv", TVroutes);
