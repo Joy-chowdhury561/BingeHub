@@ -22,7 +22,7 @@ body,html{
   background: #333;
 }
 .spinner{
-    animation: spin 1s ease-in-out 0.1s infinite;
+    animation: spin 1s ease-in-out infinite;
 }
 @keyframes spin {
   0%{
