@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getTrendingMovie, getMovieByCategory } from "../../api calls/api.js";
 import Category from "../../components/category.jsx";
 import Loader from "@/components/loader.jsx"
-import AdBanner3 from "@/components/adBanner1.jsx";
+import AdBanner from "@/components/adBanner1.jsx";
 const Movies = () => {
   const { data: trendingMovie, isPending } = useQuery({
     queryKey: ["trending movie"],
@@ -45,7 +45,7 @@ const Movies = () => {
     <>
     
       <Hero trending={trendingMovie} />
-      <AdBanner3/>
+      <AdBanner/>
       <Category category={topRatedMovie} categoryName={"Top Rated"} mediaType="movie"/>
       <Category category={popularMovie} categoryName={"Popular"} mediaType="movie"/>
       <Category category={UpcomingMovie} categoryName={"Upcoming"} mediaType="movie"/>

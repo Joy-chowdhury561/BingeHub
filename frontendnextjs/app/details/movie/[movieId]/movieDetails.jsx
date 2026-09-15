@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import Image from "next/image.js";
 import Loader from "@/components/loader.jsx";
-import AdBanner2 from "@/components/adBanner1.jsx";
+import AdBanner from "@/components/adBanner1.jsx";
 const MovieDetails = () => {
   const { movieId } = useParams();
   const {
@@ -90,7 +90,7 @@ const MovieDetails = () => {
         </div>
       </div>
 
-      <AdBanner2/>
+      <AdBanner/>
 
       <div className="w-full mt-5 flex flex-col justify-center items-center">
         <h1 className="text-white text-[clamp(2rem,2vw,8rem)] font-bold">Trailer</h1>
