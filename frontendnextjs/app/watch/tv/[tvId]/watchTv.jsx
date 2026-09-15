@@ -5,7 +5,6 @@ import { useParams } from "next/navigation";
 import Category from "../../../../components/category.jsx";
 import { getTvDetail, getSimilarTvs } from "../../../../api calls/api.js";
 import Loader from "@/components/loader.jsx"
-import AdBanner from "@/components/adBanner1.jsx";
 import AdBanner2 from "@/components/adBanner2.jsx"
 const WatchTv = () => {
   const { tvId } = useParams();
@@ -30,13 +29,12 @@ const WatchTv = () => {
     <>
       <div className="w-full  flex justify-center items-center flex-col">
         <div className="mt-26 sm:mt-0 flex flex-col items-center justify-center">
-          <AdBanner2 />
           <h1 className="text-white flex justify-center items-center w-[90%] overflow-clip text-ellipsis text-nowrap font-medium text-[clamp(1.5rem,2vw,10rem)]">
             {tvDetail.name ||
               tvDetail.title ||
               tvDetail.original_title}
           </h1>
-              <AdBanner/>
+              <AdBanner2/>
           <iframe
             className="w-[clamp(22rem,70vw,200rem)] h-[clamp(21rem,40vw,200rem)]"
             allowFullScreen

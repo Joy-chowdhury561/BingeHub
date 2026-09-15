@@ -5,7 +5,6 @@ import { useQuery } from "@tanstack/react-query";
 import Footer from "@/components/footer.jsx";
 import Hero from "../components/hero.jsx"
 import Category from "../components/category.jsx";
-import AdBanner from "@/components/adBanner1.jsx";
 import AdBanner2 from "@/components/adBanner2.jsx";
 const Home = () => {
   const {
@@ -64,11 +63,9 @@ const Home = () => {
   return (
     <>
       <Hero trending={trending}/>
-      <AdBanner/>
+      <AdBanner2/>
       <Category category={topRated} categoryName={"Top Rated"}/>
-      <AdBanner2/>
       <Category category={popular} categoryName={"Popular"}/>
-      <AdBanner2/>
       <Category category={Upcoming} categoryName={"Upcoming"}/>
       <Footer isPending={isPending}/>
     </>

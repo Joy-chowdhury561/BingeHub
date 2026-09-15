@@ -5,7 +5,6 @@ import Hero from "../../components/hero.jsx";
 import { getTrendingTv,getTvByCategory } from "../../api calls/api.js";
 import Footer from "@/components/footer.jsx"
 import Loader from "@/components/loader.jsx"
-import AdBanner from "@/components/adBanner1.jsx";
 import AdBanner2 from "@/components/adBanner2.jsx"
 const TVS = () => {
   const { data: trendingTv, isPending } = useQuery({
@@ -45,11 +44,9 @@ const TVS = () => {
   return (
     <>
       <Hero trending={trendingTv} />
-      <AdBanner/>
-      <Category category={topRatedTv} categoryName={"Top Rated"}  />
-      <AdBanner2 />
-      <Category category={popularTv} categoryName={"Popular"}/>
       <AdBanner2/>
+      <Category category={topRatedTv} categoryName={"Top Rated"}  />
+      <Category category={popularTv} categoryName={"Popular"}/>
       <Category category={UpcomingTv} categoryName={"Upcoming"} />
       <Footer isPending={isPending}/>
     </>
