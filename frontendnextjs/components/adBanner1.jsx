@@ -12,7 +12,7 @@ const AdBanner = () => {
     }
 
     window.atOptions = {
-      key:process.env.AD_KEY,
+      key:process.env.NEXT_PUBLIC_AD_KEY,
       format: "iframe",
       height: 60,
       width: 468,
@@ -20,7 +20,7 @@ const AdBanner = () => {
     };
 
     const script = document.createElement("script");
-    script.src =process.env.AD_SRC;
+    script.src =process.env.NEXT_PUBLIC_AD_SRC;
     script.async = true;
     banner.appendChild(script);
 
