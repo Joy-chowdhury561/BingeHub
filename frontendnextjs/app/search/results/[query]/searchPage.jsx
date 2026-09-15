@@ -6,6 +6,7 @@ import {useQuery} from "@tanstack/react-query"
 import {Search} from "../../../../api calls/api.js"
 import Loader from "@/components/loader.jsx"
 import AdBanner from "@/components/adBanner1.jsx";
+import AdBanner2 from "@/components/adBanner2.jsx"
 const SearchPage = () => {
    const {query}=useParams()
   const displayQuery = decodeURIComponent(query)
@@ -23,6 +24,7 @@ const SearchPage = () => {
   return (
     <>
     <div className="w-full flex justify-center items-center  flex-col ">
+      <AdBanner2 />
       <h1 className="text-white text-[clamp(1.1rem,2vw,8rem)] flex items-center gap-2 mb-2 font-medium sm:mt-5 mt-30">Search results for <p className="text-green-500">{displayQuery}</p></h1>
       {searchResult?.length<=0 && <p className="text-red-500 text-xl mt-10">{`No results for ${displayQuery}`}</p>}
       <AdBanner/>

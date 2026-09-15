@@ -10,6 +10,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image.js";
 import Loader from "@/components/loader.jsx";
 import AdBanner from "@/components/adBanner1.jsx";
+import AdBanner2 from "@/components/adBanner2.jsx"
 const MovieDetails = () => {
   const { movieId } = useParams();
   const {
@@ -56,6 +57,7 @@ const MovieDetails = () => {
 
   return (
     <>
+    <AdBanner2 />
       <div className="w-full flex mt-26 sm:mt-0 gap-[2vw]">
         <Image width={350} height={350}
           className="h-[clamp(15rem,20vw,100rem)] w-[clamp(12rem,15vw,100rem)] ml-[2vw] "

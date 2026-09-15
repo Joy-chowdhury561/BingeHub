@@ -9,7 +9,7 @@ import { useParams } from "next/navigation";
 import  Link  from "next/link";
 import Image from "next/image"
 import Loader from "@/components/loader.jsx"
-
+import AdBanner2 from "@/components/adBanner2.jsx"
 import AdBanner from "@/components/adBanner1.jsx";
 const TVDetails = () => {
   const {tvId} = useParams();
@@ -58,6 +58,7 @@ const TVDetails = () => {
 
   return (
     <>
+    <AdBanner2 />
       <div className="w-full flex mt-26 sm:mt-0 gap-[2vw]">
         <Image height={350} width={350}
           className="h-[clamp(15rem,20vw,100rem)] w-[clamp(12rem,12vw,100rem)] ml-[2vw]"
