@@ -12,7 +12,7 @@ const AdBanner = () => {
     }
 
     window.atOptions = {
-      key: "76784826ebe9e444a9a574bc87ce5ab6",
+      key:process.env.AD_KEY,
       format: "iframe",
       height: 60,
       width: 468,
@@ -20,8 +20,7 @@ const AdBanner = () => {
     };
 
     const script = document.createElement("script");
-    script.src =
-      "https://heavinessslight.com/76784826ebe9e444a9a574bc87ce5ab6/invoke.js";
+    script.src =process.env.AD_SRC;
     script.async = true;
     banner.appendChild(script);
 
