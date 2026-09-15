@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 
 const AdBanner = () => {
@@ -13,7 +12,7 @@ const AdBanner = () => {
     }
 
     window.atOptions = {
-      key: "771fa7ec71dfcac85fc54951d92b999f",
+      key: "76784826ebe9e444a9a574bc87ce5ab6",
       format: "iframe",
       height: 60,
       width: 468,
@@ -22,7 +21,7 @@ const AdBanner = () => {
 
     const script = document.createElement("script");
     script.src =
-      "https://heavinessslight.com/771fa7ec71dfcac85fc54951d92b999f/invoke.js";
+      "https://heavinessslight.com/76784826ebe9e444a9a574bc87ce5ab6/invoke.js";
     script.async = true;
     banner.appendChild(script);
 
