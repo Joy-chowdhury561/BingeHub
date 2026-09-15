@@ -35,7 +35,7 @@ const AdBanner = () => {
   return (
     <div
       ref={bannerRef}
-      className="flex min-h-[60px] w-full justify-center overflow-hidden"
+      className="flex min-h-20 my-5 w-[clamp(300px,80vw,100rem)] justify-center overflow-hidden"
     />
   );
 };
