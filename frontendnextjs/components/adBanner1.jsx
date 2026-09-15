@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef } from "react";
 
 const AdBanner = () => {
@@ -12,7 +13,7 @@ const AdBanner = () => {
     }
 
     window.atOptions = {
-      key:process.env.NEXT_PUBLIC_AD_KEY,
+      key: "76784826ebe9e444a9a574bc87ce5ab6",
       format: "iframe",
       height: 60,
       width: 468,
@@ -20,7 +21,7 @@ const AdBanner = () => {
     };
 
     const script = document.createElement("script");
-    script.src =process.env.NEXT_PUBLIC_AD_SRC;
+    script.src ="https://heavinessslight.com/76784826ebe9e444a9a574bc87ce5ab6/invoke.js";
     script.async = true;
     banner.appendChild(script);
 
