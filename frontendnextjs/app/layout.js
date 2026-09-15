@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "BingeHub - Watch Free Movies and TV shows",
+  title: "BingeHub",
   description:
-    "Watch Movies, TV shows and Anime's online for free. Explore a wide collection of movies, trending TV shows, Anime, and more—all in one easy-to-use streaming platform.",
+    "Watch Movies, TV shows and Anime's online for free. Explore a wide collection of movies, trending TV shows, Anime, and more—all in one easy-to-use streaming platform. Watch Everything for free!",
 };
 
 export default function RootLayout({ children }) {
