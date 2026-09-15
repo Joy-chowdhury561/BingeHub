@@ -29,8 +29,8 @@ const AdsterraBanner = ({ adKey, width, height }) => {
   }, [adKey, height, width]);
 
   return (
-    <div className="my-24 w-screen overflow-x-clip py-2 sm:my-5">
-      <div className="flex w-[clamp(7rem,70vw,150rem)] justify-center">
+    <div className="my-5 w-screen overflow-x-clip">
+      <div className="flex w-[clamp(22rem,70vw,150rem)] h-[clamp(100px,30vw,100rem)] justify-center">
         <div
           ref={containerRef}
           className="flex shrink-0 items-center justify-center"
