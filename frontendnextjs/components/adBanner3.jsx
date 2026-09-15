@@ -1,7 +1,7 @@
 
 import AdsterraBanner from "./adsterraBanner";
 const AdBanner3 = () => {
-  return <AdsterraBanner adKey="21f144301e35bda1635be61ac70ac850" width={160} height={600} />;
+  return <AdsterraBanner adKey="771fa7ec71dfcac85fc54951d92b999f" width={160} height={600} />;
 };
 
 export default AdBanner3;
