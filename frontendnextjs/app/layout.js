@@ -3,7 +3,6 @@ import "./globals.css";
 import Providers from "./provider.jsx";
 import Navbar from "@/components/navbar";
 import MobileNav from "@/components/mobileNav";
-import AdBanner from "@/components/adBanner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,7 +27,6 @@ export default function RootLayout({ children }) {
     >
       <body>
         <Navbar/>
-        <AdBanner />
         <Providers>{children}</Providers>
         <MobileNav/>
       </body>

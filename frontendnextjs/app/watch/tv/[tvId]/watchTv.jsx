@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Category from "../../../../components/category.jsx";
 import { getTvDetail, getSimilarTvs } from "../../../../api calls/api.js";
 import Loader from "@/components/loader.jsx"
+import AdBanner4 from "@/components/adBanner4.jsx"
 const WatchTv = () => {
   const { tvId } = useParams();
   const { data: tvDetail, isPending } = useQuery({
@@ -27,6 +28,7 @@ const WatchTv = () => {
   return (
     <>
       <div className="w-full  flex justify-center items-center flex-col">
+        <AdBanner4/>
         <div className="mt-26 sm:mt-0 flex flex-col items-center justify-center">
           <h1 className="text-white flex justify-center items-center w-[90%] overflow-clip text-ellipsis text-nowrap font-medium text-[clamp(1.5rem,2vw,10rem)]">
             {tvDetail.name ||

@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import Footer from "@/components/footer.jsx";
 import Hero from "../components/hero.jsx"
 import Category from "../components/category.jsx";
+import AdBanner from "@/components/adBanner1.jsx";
 const Home = () => {
   const {
     data: trending,
@@ -62,6 +63,7 @@ const Home = () => {
   return (
     <>
       <Hero trending={trending}/>
+      <AdBanner/>
       <Category category={topRated} categoryName={"Top Rated"}/>
       <Category category={popular} categoryName={"Popular"}/>
       <Category category={Upcoming} categoryName={"Upcoming"}/>

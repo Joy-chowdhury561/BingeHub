@@ -9,6 +9,8 @@ import { useParams } from "next/navigation";
 import  Link  from "next/link";
 import Image from "next/image"
 import Loader from "@/components/loader.jsx"
+
+import AdBanner2 from "@/components/adBanner2.jsx"
 const TVDetails = () => {
   const {tvId} = useParams();
   const {
@@ -88,7 +90,7 @@ const TVDetails = () => {
           </Link>
         </div>
       </div>
-
+      <AdBanner2/>
       <div className="w-full mt-5 flex flex-col justify-center items-center">
         <h1 className="text-white text-[clamp(2rem,2vw,8rem)] font-bold">Trailer</h1>
         {trailerId ? (
