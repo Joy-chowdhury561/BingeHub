@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import PcSearchBar from "./pcsearchBar.jsx"
 import MbSearchBar from "./mbsearchbar.jsx";
 import { useState, useEffect } from "react";
+import Script from "next/script"
 const Navbar = () => {
   const [page, setpage] = useState("home");
   const currentLocation = usePathname();
