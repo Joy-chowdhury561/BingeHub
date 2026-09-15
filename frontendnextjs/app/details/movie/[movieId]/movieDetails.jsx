@@ -90,10 +90,10 @@ const MovieDetails = () => {
         </div>
       </div>
 
-      <AdBanner/>
 
       <div className="w-full mt-5 flex flex-col justify-center items-center">
         <h1 className="text-white text-[clamp(2rem,2vw,8rem)] font-bold">Trailer</h1>
+        <AdBanner/>
         {trailerId ? (
           <iframe
             allowFullScreen
