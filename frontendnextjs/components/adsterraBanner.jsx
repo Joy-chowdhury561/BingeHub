@@ -29,10 +29,10 @@ const AdsterraBanner = ({ adKey, width, height }) => {
   }, [adKey, height, width]);
 
   return (
-    <div className="my-5 flex w-screen justify-center overflow-x-clip">
+    <div className="my-5 flex w-full justify-center overflow-x-clip">
       <div
         ref={containerRef}
-        className="flex w-[80vw] max-w-full items-center justify-center overflow-hidden [&_iframe]:h-full! [&_iframe]:w-full!"
+        className="mx-auto flex w-[80vw] max-w-full items-center justify-center overflow-hidden sm:w-[90vw] [&_iframe]:h-full! [&_iframe]:w-full!"
         style={{ aspectRatio: `${width} / ${height}` }}
       />
     </div>
