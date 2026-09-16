@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import PcSearchBar from "./pcsearchBar.jsx"
 import MbSearchBar from "./mbsearchbar.jsx";
 import { useState, useEffect } from "react";
-import Script from "next/script"
+import { IoMdDownload } from "react-icons/io";
 const Navbar = () => {
   const [page, setpage] = useState("home");
   const currentLocation = usePathname();
@@ -32,7 +32,7 @@ const Navbar = () => {
         <Link href="/">
           <div className="flex cursor-pointer items-center">
             <Image priority="true" width={50} height={50} className="h-[clamp(3rem,5vw,50rem)] w-[clamp(3rem,5vw,50rem)]" src="/logo.png" alt="logo" />
-            <h1 className="hidden md:block text-3xl text-green-400 font-bold">
+            <h1 className="hidden md:block text-[clamp(1rem,2vw,6rem)] text-green-400 font-bold">
               BingeHub
             </h1>
           </div>
@@ -70,8 +70,14 @@ const Navbar = () => {
             )}
           </Link>
         </div>
-        <h1 className="text-white font-bold text-xl sm:hidden">BingeHub</h1>
+        <h1 className="text-white font-bold text-xl sm:hidden ">BingeHub</h1>
         <PcSearchBar/>
+        <a className="ml-10 sm:ml-0" href="/BingeHub.apk" download="BingeHub.apk">
+        <div className="flex items-center gap-1 px-2 py-2 border hover:shadow-[0_0_30px_rgba(34,197,94,0.7)] border-green-500 rounded-3xl text-green-500 text-[clamp(0.7rem,1vw,2rem)]">
+          <IoMdDownload className="text-green-500 text-[clamp(1rem,1vw,2rem)] " />
+          DownLoad App
+        </div>
+        </a>
       </div>
       <MbSearchBar />
     </>
