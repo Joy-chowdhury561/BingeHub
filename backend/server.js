@@ -12,7 +12,7 @@ dotenv.config();
 const port = process.env.PORT || 5000;
 const app = express();
 const allowedOrigins = [
-  "http://localhost:3000"
+  "https://binge-hub-ten.vercel.app"
 ];
 app.use(
   cors({
