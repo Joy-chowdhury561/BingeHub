@@ -73,7 +73,7 @@ const Navbar = () => {
         <h1 className="text-white font-bold text-xl sm:hidden ">BingeHub</h1>
         <PcSearchBar/>
         <a className="ml-10 sm:ml-0" href="/BingeHub.apk" download="BingeHub.apk">
-        <div className="flex items-center gap-1 px-2 py-2 border hover:shadow-[0_0_30px_rgba(34,197,94,0.7)] border-green-500 rounded-3xl text-green-500 text-[clamp(0.7rem,1vw,2rem)]">
+        <div className="flex font-bold sm:bg-transparent sm:backdrop-blur-none bg-white/10 backdrop-blur-md items-center gap-1 px-2 py-2 border hover:shadow-[0_0_30px_rgba(34,197,94,0.7)] border-green-500 rounded-3xl text-green-500 text-[clamp(0.7rem,1vw,2rem)]">
           <IoMdDownload className="text-green-500 text-[clamp(1rem,1vw,2rem)] " />
           DownLoad App
         </div>
