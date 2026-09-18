@@ -4,8 +4,7 @@ export const getTrendingTv = async (req, res) => {
     const data = await fetchFromTMDB(
       "https://api.themoviedb.org/3/trending/tv/day?language=en-US",
     );
-    const trendingMovie =
-      data.results[Math.trunc(Math.random() * data.results.length)];
+    const trendingMovie =data.results;
     return res.status(200).json({ content: trendingMovie });
   } catch (error) {
     console.log("error in getTrendingAll controller", error.message || error);
