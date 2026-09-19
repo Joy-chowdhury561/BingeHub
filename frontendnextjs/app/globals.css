@@ -1,8 +1,9 @@
 @import "tailwindcss";
 @import "tailwindcss";
-body,html{
-    background-color:rgb(16, 16, 16) ;
-    overflow-x: clip;
+body,
+html {
+  background-color: rgb(16, 16, 16);
+  overflow-x: clip;
 }
 ::-webkit-scrollbar {
   height: 8px;
@@ -21,17 +22,17 @@ body,html{
 ::-webkit-scrollbar-thumb:hover {
   background: #333;
 }
-  .banner-scroll::-webkit-scrollbar{
-    display: none;
-  }
-.spinner{
-    animation: spin 1s ease-in-out infinite;
+.banner-scroll::-webkit-scrollbar {
+  display: none;
+}
+.spinner {
+  animation: spin 1s ease-in-out infinite;
 }
 @keyframes spin {
-  0%{
+  0% {
     transform: rotate(0);
   }
-  100%{
-      transform: rotate(100%);
+  100% {
+    transform: rotate(100%);
   }
 }
