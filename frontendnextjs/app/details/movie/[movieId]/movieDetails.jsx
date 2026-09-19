@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Footer from "@/components/footer.jsx";
 import { useEffect, useState } from "react";
 import { BiSolidMoviePlay } from "react-icons/bi";
@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import Image from "next/image.js";
 import Loader from "@/components/loader.jsx";
-import AdBanner2 from "@/components/adBanner2.jsx"
+import AdBanner2 from "@/components/adBanner2.jsx";
 const MovieDetails = () => {
   const { movieId } = useParams();
   const {
@@ -45,26 +45,32 @@ const MovieDetails = () => {
   }, [overview]);
 
   if (isPending) {
-    return <Loader/>
+    return <Loader />;
   }
 
   if (isError || !movieDetail) {
-    return <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">Unable to load movie details.</div>;
+    return (
+      <div className="flex h-[clamp(16rem,30vw,100rem)] items-center justify-center text-white">
+        Unable to load movie details.
+      </div>
+    );
   }
- 
-
 
   return (
     <>
       <div className="w-full flex mt-26 sm:mt-0 gap-[2vw]">
-        <Image width={350} height={350}
-          className="h-[clamp(15rem,20vw,100rem)] w-[clamp(12rem,15vw,100rem)] ml-[2vw] "
-          src={`https://image.tmdb.org/t/p/original${movieDetail.poster_path}`}
-          alt={movieDetail.title || movieDetail.origin_title || movieDetail.name}
-          priority
-        />
+          <Image
+            width={350}
+            height={350}
+            className="h-[clamp(15rem,20vw,100rem)] w-[clamp(12rem,15vw,100rem)] ml-[2vw] "
+            src={`https://image.tmdb.org/t/p/original${movieDetail.poster_path}`}
+            alt={
+              movieDetail.title || movieDetail.origin_title || movieDetail.name
+            }
+            priority
+          />
         <div className="flex flex-col gap-1">
-          <h1 className="text-white font-bold  text-[clamp(2rem,3vw,10rem)] ">
+          <h1 className="text-white font-bold hidden md:block  text-[clamp(2rem,3vw,10rem)] ">
             {movieDetail.title || movieDetail.origin_title || movieDetail.name}
           </h1>
           <p className="text-[clamp(1.2rem,1.5vw,2rem)] flex items-center text-white gap-1 font-medium">
@@ -83,17 +89,18 @@ const MovieDetails = () => {
             {trimmedOverView}...
           </p>
           <Link href={`/watch/movie/${movieDetail.id}`}>
-          <button className="self-start font-bold ease-in-out cursor-pointer hover:shadow-[0_0_30px_rgba(34,197,94,0.7)] hover:scale-110 duration-100 text-white bg-linear-to-b from-green-500 to-green-900 rounded-3xl mt-2 p-2.5">
-            Watch now
-          </button>
+            <button className="self-start font-bold ease-in-out cursor-pointer hover:shadow-[0_0_30px_rgba(34,197,94,0.7)] hover:scale-110 duration-100 text-white bg-linear-to-b from-green-500 to-green-900 rounded-3xl mt-2 p-2.5">
+              Watch now
+            </button>
           </Link>
         </div>
       </div>
 
-
       <div className="w-full mt-5 flex flex-col justify-center items-center">
-        <h1 className="text-white text-[clamp(2rem,2vw,8rem)] font-bold">Trailer</h1>
-        <AdBanner2/>
+        <h1 className="text-white text-[clamp(2rem,2vw,8rem)] font-bold">
+          Trailer
+        </h1>
+        <AdBanner2 />
         {trailerId ? (
           <iframe
             allowFullScreen
@@ -106,7 +113,7 @@ const MovieDetails = () => {
           <p className="text-white mt-5">No trailer available.</p>
         )}
       </div>
-      <Footer isPending={isPending}/>
+      <Footer isPending={isPending} />
     </>
   );
 };

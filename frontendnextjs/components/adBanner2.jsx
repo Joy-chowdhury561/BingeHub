@@ -32,7 +32,7 @@ const AdBanner2 = () => {
   return (
     <div
       ref={bannerRef}
-      className="flex min-h-20 my-5 w-[clamp(300px,100vw,200rem)] justify-center overflow-hidden"
+      className="flex min-h-15 mt-5  w-[clamp(300px,100vw,200rem)] justify-center overflow-hidden"
     />
   );
 };

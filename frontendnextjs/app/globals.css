@@ -21,6 +21,9 @@ body,html{
 ::-webkit-scrollbar-thumb:hover {
   background: #333;
 }
+  .banner-scroll::-webkit-scrollbar{
+    display: none;
+  }
 .spinner{
     animation: spin 1s ease-in-out infinite;
 }

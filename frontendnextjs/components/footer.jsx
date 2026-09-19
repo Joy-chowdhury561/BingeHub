@@ -1,16 +1,14 @@
-
-
-const Footer = ({isPending}) => {
+const Footer = ({ isPending }) => {
   return (
     <>
       {!isPending && (
-        <footer className="mt-8 relative bottom-13 sm:mb-0 w-full flex justify-center items-center p-5">
-          <div className="text-white flex gap-0.5 text-center  text-[clamp(0.7rem,0.8vw,2rem)]">
-            <p className="text-red-500">Disclaimer:</p> All videos and pictures
-            on BingeHub are from the Internet, and their copyrights belong to
-            the original creators. We only provide webpage services and do not
-            store, record, or upload any content.
-          </div>
+        <footer className=" mt-8 relative bottom-13 sm:bottom-0 bg-[#161616]   w-full flex border-t border-gray-700  items-center p-5">
+          <p className="text-gray-300 flex gap-0.5  text-[12px]">
+            Disclaimer: All videos and pictures on BingeHub are from the
+            Internet, and their copyrights belong to the original creators. We
+            only provide webpage services and do not store, record, or upload
+            any content.
+          </p>
         </footer>
       )}
     </>
