@@ -40,7 +40,7 @@ const Category = ({category,categoryName}) => {
 
   return (
     <>
-    <div className="md:w-[97vw] w-full rounded-2xl border-l-2 md:border-green-500 pl-2 md:pl-5 md:pt-5 md:bg-[#161616] h-[clamp(320px,25vw,50rem)] mt-3 md:mx-auto md:my-10">
+    <div className="md:w-[97vw] w-full rounded-2xl border-l-2 md:border-green-500 pl-2 md:pl-5 md:pt-5 md:bg-[#161616] h-[clamp(320px,25vw,50rem)] md:mx-auto md:my-10">
         <p className=" font-medium    text-white text-[clamp(1rem,1vw,5rem)] border-l-3 border-green-500" >🔥{categoryName}</p>
         <div className="relative h-[85%]">
           <div ref={scrollRef} className="relative z-0 flex banner-scroll md:px-2 py-5 items-center overflow-x-scroll overflow-y-clip gap-3 h-full">

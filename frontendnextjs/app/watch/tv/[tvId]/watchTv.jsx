@@ -45,7 +45,7 @@ const WatchTv = () => {
       </div>
 
       {!fetchingSimilars && (
-        <Category category={similarTvs} categoryName={"You may also like"} />
+        <Category className="mt-3" category={similarTvs} categoryName={"You may also like"} />
       )}
       <Footer isPending={isPending}/>
     </>
