@@ -6,7 +6,6 @@ import authRoutes from "./routes/authRoutes.js";
 import movieRoutes from "./routes/movieRoutes.js";
 import TVroutes from "./routes/TVRoutes.js";
 import searchRoutes from "./routes/searchRoutes.js";
-import job from "./utils/cron.js";
 import cors from "cors";
 dotenv.config();
 const port = process.env.PORT || 5000;
@@ -34,7 +33,4 @@ app.get("/health", (req, res) => {
 app.listen(port, () => {
   console.log("the server started at port:", port);
   connectDB();
-  if (process.env.NODE_ENV === "production") {
-    job.start();
-  }
 });
