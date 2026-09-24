@@ -55,7 +55,7 @@ const CategoryPage = () => {
   return (
     <>
       <main className="w-full flex justify-center items-center  flex-col ">
-        <h1 className="text-white border-l-3 pl-5  border-b-green-500 text-[clamp(1.1rem,2vw,8rem)] flex items-center gap-2 mb-2 font-medium sm:mt-5 mt-30">
+        <h1 className="text-white border-b-3 pb-4  border-b-green-500 text-[clamp(1.1rem,2vw,8rem)] flex items-center gap-2 mb-2 font-medium sm:mt-5 mt-30">
           {category.replaceAll("_", " ")}
         </h1>
         <div className=" p-5 flex gap-5 justify-center  flex-wrap w-[clamp(350px,80vw,100rem)]">
