@@ -1,14 +1,14 @@
-"use client"
-import Image from "next/image"
+"use client";
+import Image from "next/image";
 import { IoChevronBack, IoChevronForward, IoStar } from "react-icons/io5";
-import Link from "next/link"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, A11y, Navigation, Pagination } from 'swiper/modules';
+import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, A11y, Navigation, Pagination } from "swiper/modules";
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-const Hero = ({trending}) => {
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+const Hero = ({ trending }) => {
   const genreMap = {
     28: "Action",
     12: "Adventure",
@@ -29,10 +29,14 @@ const Hero = ({trending}) => {
     53: "Thriller",
     10752: "War",
     37: "Western",
-    10765:"Sci-Fi & Fantasy",
-    10759:"Action & Adventure"
+    10765: "Sci-Fi & Fantasy",
+    10759: "Action & Adventure",
   };
-  const slides = Array.isArray(trending) ? trending : trending ? [trending] : [];
+  const slides = Array.isArray(trending)
+    ? trending
+    : trending
+      ? [trending]
+      : [];
 
   if (slides.length === 0) {
     return null;
@@ -52,10 +56,16 @@ const Hero = ({trending}) => {
       className="h-130 w-full [--swiper-pagination-color:#22c55e]"
     >
       {slides.map((slide) => {
-        const genres = slide.genre_ids?.map((id) => genreMap[id]).filter(Boolean).join(" / ");
+        const genres = slide.genre_ids
+          ?.map((id) => genreMap[id])
+          .filter(Boolean)
+          .join(" / ");
         const rating = Number(slide.vote_average ?? 0).toFixed(1);
         const title = slide.name || slide.title || slide.original_title;
-        const detailsPath = slide.media_type === "tv" ? `/details/tv/${slide.id}` : `/details/movie/${slide.id}`;
+        const detailsPath =
+          slide.media_type === "tv"
+            ? `/details/tv/${slide.id}`
+            : `/details/movie/${slide.id}`;
         const imageUrl = `https://image.tmdb.org/t/p/original/${slide.poster_path}`;
 
         return (
@@ -67,9 +77,12 @@ const Hero = ({trending}) => {
               <div className="absolute h-full w-full bg-black/10 backdrop-blur-2xl" />
               <div className="absolute flex h-full w-full items-center justify-center">
                 <div className="absolute bottom-[5%] left-5 z-10 font-bold">
-                  <h1 className="w-[70vw] overflow-hidden text-ellipsis text-nowrap text-[clamp(1.5rem,2vw,10rem)] text-white">
+                  <Link href={detailsPath}>
+                  
+                  <h1 className="w-[70vw] cursor-pointer hover:underline overflow-hidden text-ellipsis text-nowrap text-[clamp(1.5rem,2vw,10rem)] text-white">
                     {title}
                   </h1>
+                  </Link>
                   <p className="w-[60vw] overflow-hidden text-ellipsis text-nowrap text-[clamp(0.7rem,1vw,2rem)] text-gray-300 sm:w-[20vw]">
                     {genres}
                   </p>
