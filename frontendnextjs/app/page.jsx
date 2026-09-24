@@ -64,9 +64,9 @@ const Home = () => {
     <>
       <Hero trending={trending}/>
       <AdBanner2/>
-      <Category category={topRated} categoryName={"Top Rated"}/>
-      <Category category={popular} categoryName={"Popular"}/>
-      <Category category={Upcoming} categoryName={"Upcoming"}/>
+      <Category type={"All"} tmdbCategory={"top_rated"} category={topRated} categoryName={"Top Rated"}/>
+      <Category type={"All"} tmdbCategory={"popular"} category={popular} categoryName={"Popular"}/>
+      <Category type={"All"} tmdbCategory={"upcoming"} category={Upcoming} categoryName={"Upcoming"}/>
       <Footer isPending={isPending}/>
     </>
   );

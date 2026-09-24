@@ -45,9 +45,9 @@ const TVS = () => {
     <>
       <Hero trending={trendingTv} />
       <AdBanner2/>
-      <Category category={topRatedTv} categoryName={"Top Rated"}  />
-      <Category category={popularTv} categoryName={"Popular"}/>
-      <Category category={UpcomingTv} categoryName={"Upcoming"} />
+      <Category type="Tv shows" tmdbCategory="top_rated" category={topRatedTv} categoryName={"Top Rated"}  />
+      <Category type="Tv shows" tmdbCategory="popular" category={popularTv} categoryName={"Popular"}/>
+      <Category type="Tv shows" tmdbCategory="on_the_air" category={UpcomingTv} categoryName={"Upcoming"} />
       <Footer isPending={isPending}/>
     </>
   );

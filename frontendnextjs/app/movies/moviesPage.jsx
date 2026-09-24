@@ -46,9 +46,9 @@ const Movies = () => {
     
       <Hero trending={trendingMovie} />
       <AdBanner2/>
-      <Category category={topRatedMovie} categoryName={"Top Rated"} mediaType="movie"/>
-      <Category category={popularMovie} categoryName={"Popular"} mediaType="movie"/>
-      <Category category={UpcomingMovie} categoryName={"Upcoming"} mediaType="movie"/>
+      <Category type="movies" tmdbCategory="top_rated" category={topRatedMovie} categoryName={"Top Rated"}/>
+      <Category type="movies" tmdbCategory="popular" category={popularMovie} categoryName={"Popular"}/>
+      <Category type="movies" tmdbCategory="upcoming" category={UpcomingMovie} categoryName={"Upcoming"}/>
       <Footer isPending={isPending}/>
     </>
   );
