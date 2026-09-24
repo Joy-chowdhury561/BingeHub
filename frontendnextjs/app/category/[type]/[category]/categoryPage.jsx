@@ -25,7 +25,7 @@ const CategoryPage = () => {
         return getMovieByCategory(category);
       }
 
-      if (normalizedType === "tv shows") {
+      if (normalizedType === "tv" || normalizedType === "tv shows") {
         return getTvByCategory(category);
       }
 
