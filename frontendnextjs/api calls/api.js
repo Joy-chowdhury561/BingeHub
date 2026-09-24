@@ -66,6 +66,9 @@ export const getAllCategory = async (
         revalidate:86400
       }
     });
+    if (!Movieres.ok || !Tvres.ok) {
+      throw new Error("error in fetching combined category");
+    }
     const movieData = await Movieres.json();
     const tvData = await Tvres.json();
     const trendingMovies = movieData.content;
