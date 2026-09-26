@@ -36,3 +36,8 @@ html {
     transform: rotate(100%);
   }
 }
+@media (200<= width <=768) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
