@@ -37,7 +37,8 @@ html {
   }
 }
 @media (200<= width <=768) {
-  ::-webkit-scrollbar {
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar  {
     display: none;
   }
 }
