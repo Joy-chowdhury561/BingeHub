@@ -1,5 +1,5 @@
 import WatchTv from "./watchTv"
-import {getTvDetail} from "../../../../api calls/api.js"
+import {getTvDetail} from "@/api calls/api.js"
 export const generateMetadata=async({params})=>{
   const {tvId}=await params;
   const data= await getTvDetail(tvId)

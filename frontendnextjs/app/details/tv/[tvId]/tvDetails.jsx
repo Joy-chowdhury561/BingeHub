@@ -90,7 +90,7 @@ const TVDetails = () => {
             {trimmedOverView}
             {overview ? "..." : ""}
           </p>
-          <Link href={`/watch/tv/${tvId}`}>
+          <Link href={`/watch/tv/${tvId}/1/1`}>
             <button className="self-start font-bold ease-in-out cursor-pointer hover:shadow-[0_0_30px_rgba(34,197,94,0.7)] hover:scale-110 duration-100 text-white bg-linear-to-b from-green-500 to-green-900 rounded-3xl mt-2 p-2.5">
               Watch now
             </button>

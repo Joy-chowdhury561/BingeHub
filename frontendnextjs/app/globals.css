@@ -25,6 +25,9 @@ html {
 .banner-scroll::-webkit-scrollbar {
   display: none;
 }
+.episode-scroll::-webkit-scrollbar {
+  display: none;
+}
 .spinner {
   animation: spin 1s ease-in-out infinite;
 }
