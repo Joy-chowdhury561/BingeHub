@@ -78,7 +78,7 @@ const WatchTv = () => {
             </div>
           </div>
 
-          <div className="max-h-[70%] episode-scroll overflow-y-auto px-5 pb-5">
+          <div className="max-h-[60%] episode-scroll overflow-y-auto px-5 pb-5">
             <div className="flex gap-2  flex-wrap">
               {Array.from(
                 { length: selectedSeasonDetails?.episode_count ?? 0 },
