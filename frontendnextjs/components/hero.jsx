@@ -79,7 +79,7 @@ const Hero = ({ trending }) => {
                 <div className="absolute bottom-[5%] left-5 z-10 font-bold">
                   <Link href={detailsPath}>
                   
-                  <h1 className="w-[70vw] cursor-pointer hover:underline overflow-hidden text-ellipsis text-nowrap text-[clamp(1.5rem,2vw,10rem)] text-white">
+                  <h1 className="w-[70vw] md:w-fit cursor-pointer hover:underline overflow-hidden text-ellipsis text-nowrap text-[clamp(1.5rem,2vw,10rem)] text-white">
                     {title}
                   </h1>
                   </Link>
