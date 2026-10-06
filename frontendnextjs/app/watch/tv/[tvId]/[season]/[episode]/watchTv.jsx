@@ -54,7 +54,7 @@ const WatchTv = () => {
             frameBorder="0"
           ></iframe>
         </div>
-        <div className="bg-[#36363622] rounded-2xl   shrink-0 h-[clamp(300px,30vw,200rem)] lg:h-auto w-87 md:w-70 lg:w-[clamp(350px,20%,600px)]">
+        <div className="bg-[#36363622] rounded-2xl   shrink-0 h-[clamp(300px,30vw,60rem)] lg:h-auto w-87 md:w-70 lg:w-[clamp(350px,20%,600px)]">
           <div className="relative">
             <div className="p-5 flex gap-2 overflow-x-auto episode-scroll lg:flex-wrap">
               {tvDetail.seasons.map((seasonDetails) => {
