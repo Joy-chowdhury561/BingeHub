@@ -50,7 +50,7 @@ const WatchTv = () => {
           <iframe
             className="w-[clamp(360px,60vw,200rem)] h-[clamp(250px,30vw,200rem)]"
             allowFullScreen
-            src={`https://vidsrc.io/embed/tv/${tvId}/${season}/${episode}`}
+            src={`https://vidsrc.store/embed/tv/${tvId}/${season}/${episode}`}
             frameBorder="0"
           ></iframe>
         </div>

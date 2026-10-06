@@ -1,45 +1,52 @@
-"use client"
+"use client";
 import Footer from "@/components/footer.jsx";
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import Category from "../../../../components/category.jsx";
-import { getMovieDetail,getSimilarMovies } from "../../../../api calls/api.js";
-import Loader from "@/components/loader.jsx"
-import AdBanner2 from "@/components/adBanner2.jsx"
+import { getMovieDetail, getSimilarMovies } from "../../../../api calls/api.js";
+import Loader from "@/components/loader.jsx";
+import AdBanner2 from "@/components/adBanner2.jsx";
 const WatchMovie = () => {
   const { movieId } = useParams();
-  const { data: movieDetail,isPending } = useQuery({
+  const { data: movieDetail, isPending } = useQuery({
     queryKey: ["movie detail", movieId],
     queryFn: () => getMovieDetail(movieId),
     retry: false,
     fetchOnWindowFocus: false,
     staleTime: Infinity,
   });
-  const {data:similarMovies,isPending:fetchingSimilars}=useQuery({
-    queryKey:["similar movies",movieId],
-    queryFn:()=>getSimilarMovies(movieId),
+  const { data: similarMovies, isPending: fetchingSimilars } = useQuery({
+    queryKey: ["similar movies", movieId],
+    queryFn: () => getSimilarMovies(movieId),
     retry: false,
     fetchOnWindowFocus: false,
     staleTime: Infinity,
-  })
-  if(isPending){
-    return <Loader/>
+  });
+  if (isPending) {
+    return <Loader />;
   }
   return (
     <>
-    <div className="w-full  flex justify-center items-center flex-col">
-      <div className="mt-26 sm:mt-0 flex flex-col items-center justify-center">
-        <h1 className="text-white flex justify-center items-center w-[90%] overflow-clip text-ellipsis text-nowrap font-medium text-[clamp(0.9rem,2vw,10rem)]">
-          {movieDetail.name || movieDetail.title || movieDetail.original_title }
-        </h1>
-      <AdBanner2/>
-        <iframe className="w-[clamp(360px,60vw,200rem)] h-[clamp(250px,30vw,200rem)]" allowFullScreen src={`https://vidsrc.io/embed/movie/${movieId}`} ></iframe>
+      <div className="w-full  flex justify-center items-center flex-col">
+        <div className="mt-26 sm:mt-0 flex flex-col items-center justify-center">
+          <h1 className="text-white flex justify-center items-center w-[90%] overflow-clip text-ellipsis text-nowrap font-medium text-[clamp(0.9rem,2vw,10rem)]">
+            {movieDetail.name ||
+              movieDetail.title ||
+              movieDetail.original_title}
+          </h1>
+          <AdBanner2 />
+          <iframe
+            className="w-[clamp(360px,60vw,200rem)] h-[clamp(250px,30vw,200rem)]"
+            allowFullScreen
+            src={`https://vidsrc.store/embed/movie/${movieId}`}
+          ></iframe>
+        </div>
       </div>
-    </div>
 
-      {!fetchingSimilars && <Category  category={similarMovies} categoryName={"You may also like"} />}
-      <Footer isPending={isPending}/>
-
+      {!fetchingSimilars && (
+        <Category category={similarMovies} categoryName={"You may also like"} />
+      )}
+      <Footer isPending={isPending} />
     </>
   );
 };
