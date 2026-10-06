@@ -69,14 +69,13 @@ const WatchTv = () => {
                       selectedSeason === seasonNumber
                         ? "bg-green-400 text-black"
                         : "bg-[#373737] text-white"
-                    } rounded-xl px-4 py-0.5 font-medium cursor-pointer hover:bg-green-400 hover:text-black duration-100`}
+                    } rounded-xl px-4 py-0.5 font-medium cursor-pointer hover:bg-gray-600  duration-100`}
                   >
                     {seasonNumber === "0" ? "Specials" : `S${seasonNumber}`}
                   </button>
                 );
               })}
             </div>
-            <div className="absolute lg:hidden right-0 top-0 bottom-0 z-10 w-10 bg-linear-to-r from-transparent to-black/50"></div>
           </div>
 
           <div className="max-h-[70%] episode-scroll overflow-y-auto px-5 pb-5">
@@ -98,11 +97,11 @@ const WatchTv = () => {
                       `/watch/tv/${tvId}/${selectedSeason}/${episodeNumber}`,
                     )
                   }
-                  className={`w-fit rounded-xl px-6 py-4 font-mono cursor-pointer hover:bg-green-400 hover:text-black duration-100 ${
+                  className={`w-fit rounded-xl px-6 py-4 font-mono cursor-pointer hover:bg-gray-600 duration-100 ${
                     String(season) === selectedSeason &&
                     String(episode) === String(episodeNumber)
                       ? "bg-green-400 text-black"
-                      : "bg-[#373737] text-gray-300"
+                      : "bg-[#373737] text-gray-200"
                   }`}
                 >
                   {episodeNumber}
