@@ -13,10 +13,14 @@ const Footer = ({ isPending }) => {
             any content.
           </p>
           <p className="flex items-center text-[12px] text-white gap-2">
-          <FaRegCopyright className="text-white" />
-          Joy chowdhury 2026
+            <FaRegCopyright className="text-white" />
+            <a href="https://www.linkedin.com/in/joy-chowdhury6969">
+              Joy chowdhury 2026
+            </a>
           </p>
-          <p className="flex items-center text-[12px] gap-1 text-white">Made with <FaHeart className="text-red-500" /></p>
+          <p className="flex items-center text-[12px] gap-1 text-white">
+            Made with <FaHeart className="text-red-500" />
+          </p>
         </footer>
       )}
     </>
