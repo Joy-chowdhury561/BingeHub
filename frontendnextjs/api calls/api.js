@@ -222,7 +222,7 @@ export const Search=async(query)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/search/all/${query}`,{
       next:{
-        revalidate:86400
+        revalidate:604800
       }
     });
     const data=await res.json();
