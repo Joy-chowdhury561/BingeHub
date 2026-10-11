@@ -21,7 +21,7 @@ export const getMovieByCategory = async (category) => {
   try {
     const res = await fetch(`${process.env.BACKEND_URL}/api/movie/${category}`,{
       next:{
-        revalidate:86400
+        revalidate:604800
       }
     });
     if (!res.ok) {
@@ -38,7 +38,7 @@ export const getTvByCategory = async (category) => {
   try {
     const res = await fetch(`${process.env.BACKEND_URL}/api/tv/${category}`,{
       next:{
-        revalidate:86400
+        revalidate:604800
       }
     });
     const data = await res.json();
@@ -58,12 +58,12 @@ export const getAllCategory = async (
   try {
     const Movieres = await fetch(`${process.env.BACKEND_URL}/api/movie/${movieCategory}`,{
       next:{
-        revalidate:86400
+        revalidate:604800
       }
     });
     const Tvres = await fetch(`${process.env.BACKEND_URL}/api/tv/${tvCategory}`,{
       next:{
-        revalidate:86400
+        revalidate:604800
       }
     });
     if (!Movieres.ok || !Tvres.ok) {
@@ -118,7 +118,7 @@ export const getMovieDetail=async(id)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/movie/detail/${id}`,{
       next:{
-        revalidate:86400
+        revalidate:2629800
       }
     })
     const data=await res.json()
@@ -135,7 +135,7 @@ export const getMovieTrailer=async(movieId)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/movie/trailer/${movieId}`,{
       next:{
-        revalidate:86400
+        revalidate:2629800
       }
     })
     const data=await res.json();
@@ -153,7 +153,7 @@ export const getTvTrailer=async(tvId)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/tv/trailer/${tvId}`,{
       next:{
-        revalidate:86400
+        revalidate:2629800
       }
     })
     const data=await res.json();
@@ -171,7 +171,7 @@ export const getTvDetail=async(tvId)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/tv/detail/${tvId}`,{
       next:{
-        revalidate:86400
+        revalidate:2629800
       }
     })
     const data=await res.json()
@@ -188,7 +188,7 @@ export const getSimilarMovies=async(movieId)=>{
   try {
     const res=await fetch(`${process.env.BACKEND_URL}/api/movie/similar/${movieId}`,{
       next:{
-        revalidate:86400
+        revalidate:2629800
       }
     });
     const data=await res.json()
@@ -205,7 +205,7 @@ export const getSimilarTvs=async(tvId)=>{
     try {
       const res=await fetch(`${process.env.BACKEND_URL}/api/tv/similar/${tvId}`,{
       next:{
-        revalidate:86400
+        revalidate:2629800
       }
     });
     const data=await res.json()
