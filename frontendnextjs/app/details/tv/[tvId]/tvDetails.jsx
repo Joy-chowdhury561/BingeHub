@@ -1,7 +1,7 @@
 "use client";
 import Footer from "@/components/footer.jsx";
 import { useEffect, useState } from "react";
-import { PiFilmReelFill } from "react-icons/pi";
+import { TbDeviceTvFilled } from "react-icons/tb";
 import { IoStar } from "react-icons/io5";
 import { getTvDetail, getTvTrailer } from "../../../../api calls/api.js";
 import { useQuery } from "@tanstack/react-query";
@@ -75,7 +75,7 @@ const TVDetails = () => {
             {tvTitle}
           </h1>
           <p className="text-[clamp(1.2rem,1.5vw,2rem)]  flex items-center text-white gap-1 font-medium">
-            <PiFilmReelFill fill="white" /> |{" "}
+            <TbDeviceTvFilled fill="white" /> |{" "}
             {tvDetail.origin_country?.[0] ?? "Unknown"} |{" "}
             {tvDetail.first_air_date?.slice(0, 4) ?? "Unknown"}
           </p>

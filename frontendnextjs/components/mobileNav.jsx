@@ -1,6 +1,6 @@
 "use client";
 import { BiSolidMoviePlay } from "react-icons/bi";
-import { PiFilmReelFill } from "react-icons/pi";
+import { TbDeviceTvFilled } from "react-icons/tb";
 import { IoMdHome } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -45,7 +45,7 @@ const MobileNav = () => {
         </Link>
         <Link href="/tvs">
           <div className={`text-gray-500 ${page==="tv shows"?"text-green-500":"text-gray-500"} text-[clamp(0.8rem,1vw,2rem)] flex flex-col items-center`}>
-            <PiFilmReelFill
+            <TbDeviceTvFilled 
               className={`${page === "tv shows" ? "text-green-500 drop-shadow-[0_0_12px_#22c55e]" : "text-gray-500"} text-3xl`}
             />
             Tv shows
